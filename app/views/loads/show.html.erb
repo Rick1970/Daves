@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @load.Number %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @load.Customer %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @load.From %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @load.To %>
+</p>
+
+<%= link_to 'Edit', edit_load_path(@load) %> |
+<%= link_to 'Back', loads_path %>
