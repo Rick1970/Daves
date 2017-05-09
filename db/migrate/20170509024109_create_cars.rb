@@ -5,7 +5,7 @@ class CreateCars < ActiveRecord::Migration[5.0]
       t.string :year
       t.string :make
       t.string :model
-      t.references :load, foreign_key: true
+      t.references :load, index:true, foreign_key: true
 
       t.timestamps
     end
