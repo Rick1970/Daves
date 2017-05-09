@@ -25,7 +25,7 @@ class LoadsController < ApplicationController
   # POST /loads.json
   def create
     @load = Load.new(load_params)
-
+    @load.user = User.first
     respond_to do |format|
       if @load.save
         format.html { redirect_to @load, notice: 'Load was successfully created.' }
