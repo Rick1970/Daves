@@ -21,7 +21,7 @@
         <td><%= car.year %></td>
         <td><%= car.make %></td>
         <td><%= car.model %></td>
-        <td><%= car.load %></td>
+        <td><%= car.load.user_id %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
