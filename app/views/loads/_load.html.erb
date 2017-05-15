@@ -1,0 +1,29 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Customer</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Created by</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% obj.each do |load| %>
+      <tr>
+        <td><%= load.Number %></td>
+        <td><%= load.Customer %></td>
+        <td><%= load.From %></td>
+        <td><%= load.To %></td>
+        <td><%= load.user.username if load.user %></td>
+        <td><%= load.created_at %></td>
+        <td><%= link_to 'Show', load %></td>
+        <td><%= link_to 'Edit', edit_load_path(load) %></td>
+        <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
