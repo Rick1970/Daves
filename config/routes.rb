@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :cars
-  resources :loads
+ 
+  resources :loads do
+   resources :cars
+  end 
   root to: 'welcome#home'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'

@@ -24,17 +24,19 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.json
   def create
-    @car = Car.new(car_params)
+    @load = Load.find(params[:load_id])
+    @car = @load.cars.create(params[:car].permit(:vin, :year, :make, :model))
+    redirect_to load_path(@load)
 
-    respond_to do |format|
-      if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
-        format.json { render :show, status: :created, location: @car }
-      else
-        format.html { render :new }
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @car.save
+    #     format.html { redirect_to @car, notice: 'Car was successfully created.' }
+    #     format.json { render :show, status: :created, location: @car }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @car.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /cars/1

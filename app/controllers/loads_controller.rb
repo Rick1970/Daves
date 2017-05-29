@@ -1,18 +1,16 @@
 class LoadsController < ApplicationController
   before_action :set_load, only: [:show, :edit, :update, :destroy]
 
-  # GET /loads
-  # GET /loads.json
+ 
   def index
     @loads = Load.all
   end
 
-  # GET /loads/1
-  # GET /loads/1.json
+  
   def show
   end
 
-  # GET /loads/new
+  
   def new
     @load = Load.new
   end

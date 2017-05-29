@@ -30,5 +30,12 @@
 </p>
 
 
+<div id="cars">
+  <h2>Number of cars: <%=@load.cars.count %></h2>
+    <%= render @load.cars %>
+  <h3>Add another car to load:</h3>
+    <%= render 'cars/form' %>
+  
+</div>
 <%= link_to 'Edit', edit_load_path(@load) %> |
 <%= link_to 'Back', loads_path %>
